@@ -1,0 +1,9 @@
+Next.js Learning Portal - Sample Course Outline
+
+1. Build pages with the App Router.
+2. Share layouts and reusable components.
+3. Read route and search parameters.
+4. Keep server and client responsibilities clear.
+5. Practice images, styling, and safe configuration.
+
+This sample outline is provided for the Level 1 learning demo.

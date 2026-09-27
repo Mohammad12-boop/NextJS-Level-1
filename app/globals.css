@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+.workspace-launcher {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #0a0a0a;
+  color: #ededed;
+}
+.workspace-launcher-inner {
+  width: min(100%, 64rem);
+  margin-inline: auto;
+  padding: 1.5rem;
+}
+.workspace-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.workspace-menu-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+}
+.workspace-menu-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.workspace-cards > li { min-width: 0; }
+.workspace-cards a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.workspace-files { overflow-wrap: anywhere; }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,5 +53,317 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--foreground);
+}
+
+.site-nav,
+.page-shell {
+  width: min(100%, 64rem);
+  margin-inline: auto;
+  padding: 1.5rem;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-name,
+.dashboard-sidebar h2 {
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.nav-links a,
+.dashboard-links a {
+  display: inline-block;
+  padding-block: 0.5rem;
+}
+
+.site-nav a:hover,
+.dashboard-links a:hover,
+.intro-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.page-shell {
+  padding-block: 3rem;
+}
+
+.nav-links .nav-link-active {
+  font-weight: 700;
+  box-shadow: inset 0 -3px currentColor;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1.5rem;
+}
+
+.catalog-grid a {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.product-details {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.product-details dt {
+  font-weight: 600;
+}
+
+.demo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.product-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.demo-controls button[aria-pressed="true"] {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.demo-controls button {
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1rem;
+  cursor: pointer;
+}
+
+.demo-controls button:hover {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.demo-controls button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: clamp(1.875rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.page-header p,
+.content-card p {
+  margin-top: 1rem;
+  max-width: 65ch;
+  line-height: 1.75;
+}
+
+.content-card,
+.dashboard-sidebar {
+  padding: 1.5rem;
+  border: 1px solid var(--foreground);
+  border-radius: 0.75rem;
+}
+
+.content-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.dashboard-shell {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.dashboard-links {
+  margin-top: 1rem;
+}
+
+.dashboard-content {
+  min-width: 0;
+}
+
+@media (min-width: 48rem) {
+  .dashboard-shell {
+    grid-template-columns: 12rem minmax(0, 1fr);
+  }
+}
+
+/* Final Project: scoped portal styles, leaving challenge demos intact. */
+.course-explorer-controls {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+}
+.course-explorer-controls > div { min-width: 0; }
+.course-explorer-controls label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.course-explorer-controls input,
+.course-explorer-controls select,
+.course-explorer-controls button {
+  width: 100%;
+  min-width: 0;
+  min-height: 2.875rem;
+  border: 1px solid #80958e;
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+  background: var(--background);
+  color: var(--foreground);
+}
+.course-explorer-controls button { cursor: pointer; font-weight: 600; }
+.course-explorer-controls button:hover { text-decoration: underline; }
+.course-explorer-controls :is(input, select, button):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+@media (min-width: 64rem) {
+  .course-explorer-controls { grid-template-columns: 2fr 1.5fr 1fr auto; }
+}
+.portal-hero {
+  padding: clamp(1.5rem, 5vw, 4rem);
+  border-radius: 1.25rem;
+  background: #123f40;
+  color: #f4faf7;
+}
+.portal-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #28736c;
+}
+.portal-hero .portal-eyebrow { color: #b5ded0; }
+.portal-hero h1 {
+  max-width: 20ch;
+  margin-top: 1rem;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+.portal-hero > p:not(.portal-eyebrow) {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  line-height: 1.75;
+}
+.portal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.portal-button {
+  display: inline-block;
+  border: 1px solid #e5eee7;
+  border-radius: 0.5rem;
+  background: #e5eee7;
+  color: #123f40;
+  padding: 0.8rem 1.1rem;
+  font-weight: 600;
+}
+.portal-button-secondary { background: transparent; color: #f4faf7; }
+.portal-button:hover { text-decoration: underline; text-underline-offset: 0.25rem; }
+.portal-hero-note { font-size: 0.875rem; color: #c8dfd6; }
+.portal-section { margin-top: 3.5rem; }
+.portal-section h2, .portal-learning h2 {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 650;
+  line-height: 1.3;
+}
+.portal-section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.portal-text-link { text-decoration: underline; text-underline-offset: 0.25rem; }
+.portal-course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #cad8d3;
+  border-radius: 0.75rem;
+  line-height: 1.65;
+}
+.portal-course-card h3 { font-size: 1.3rem; font-weight: 650; }
+.portal-course-card .portal-course-meta { margin-top: auto; font-size: 0.875rem; }
+.portal-course-card > a { font-weight: 600; }
+.portal-category-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.portal-category-links a {
+  display: block;
+  border: 1px solid #cad8d3;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  font-weight: 600;
+}
+.portal-learning {
+  margin-top: 3.5rem;
+  padding-block: 2rem;
+  border-top: 1px solid #cad8d3;
+}
+.portal-learning p { max-width: 65ch; line-height: 1.75; margin-block: 1rem; }
+.portal-footer { margin-top: auto; border-top: 1px solid #cad8d3; }
+.portal-footer .page-shell { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; padding-block: 2rem; }
+.portal-contact-fields { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+.portal-contact-fields label { font-weight: 600; }
+.portal-contact-fields input, .portal-contact-fields textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #80958e;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  background: var(--background);
+  color: var(--foreground);
+}
+.portal-contact-fields button { padding: 0.75rem; border: 1px solid #80958e; border-radius: 0.5rem; cursor: not-allowed; }
+@media (prefers-color-scheme: dark) {
+  .portal-eyebrow { color: #9fd5c4; }
+  .portal-course-card, .portal-category-links a, .portal-learning, .portal-footer { border-color: #4a655c; }
 }
