@@ -1,0 +1,36 @@
+# Part B - Completed Challenges
+
+30 / 30 Completed. These folders document the existing challenges; they are not separate applications or copies of source code. Next.js filesystem routes remain in `app/`, with shared implementation in `components/`, `lib/`, and `public/`.
+
+Open `/part-b` in the running application for the challenge selector. Demos open at their existing URLs; structural topics have lightweight information pages. Browser index data lives in `lib/challenges.ts`.
+
+- [Challenge 01 - Initialize the Workspace](Challenge_01/README.md)
+- [Challenge 02 - Explore the App Router Structure](Challenge_02/README.md)
+- [Challenge 03 - Build the Root Layout](Challenge_03/README.md)
+- [Challenge 04 - Pages and File-System Routing](Challenge_04/README.md)
+- [Challenge 05 - Shared Components](Challenge_05/README.md)
+- [Challenge 06 - Nested Layouts](Challenge_06/README.md)
+- [Challenge 07 - Active Navigation](Challenge_07/README.md)
+- [Challenge 08 - Dynamic Course Routes](Challenge_08/README.md)
+- [Challenge 09 - Dynamic Product Routes](Challenge_09/README.md)
+- [Challenge 10 - Search Parameters Basics](Challenge_10/README.md)
+- [Challenge 11 - Route Groups](Challenge_11/README.md)
+- [Challenge 12 - Private Folders and Colocation](Challenge_12/README.md)
+- [Challenge 13 - Loading UI](Challenge_13/README.md)
+- [Challenge 14 - Error Boundaries](Challenge_14/README.md)
+- [Challenge 15 - Custom Not Found](Challenge_15/README.md)
+- [Challenge 16 - Server Components](Challenge_16/README.md)
+- [Challenge 17 - Client Components](Challenge_17/README.md)
+- [Challenge 18 - Server and Client Composition](Challenge_18/README.md)
+- [Challenge 19 - Image Optimization](Challenge_19/README.md)
+- [Challenge 20 - Font Optimization](Challenge_20/README.md)
+- [Challenge 21 - Static Metadata](Challenge_21/README.md)
+- [Challenge 22 - Dynamic Metadata](Challenge_22/README.md)
+- [Challenge 23 - Static Assets from public/](Challenge_23/README.md)
+- [Challenge 24 - Global CSS vs CSS Modules](Challenge_24/README.md)
+- [Challenge 25 - Tailwind Layout Exercise](Challenge_25/README.md)
+- [Challenge 26 - Private Environment Variable](Challenge_26/README.md)
+- [Challenge 27 - Public Environment Variable](Challenge_27/README.md)
+- [Challenge 28 - Server-Side Data Fetching](Challenge_28/README.md)
+- [Challenge 29 - Parallel Data Fetching](Challenge_29/README.md)
+- [Challenge 30 - Suspense and Streaming](Challenge_30/README.md)
